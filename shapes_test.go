@@ -9,45 +9,34 @@ type Shape interface {
 }
 
 func TestPerimeter(t *testing.T) {
-	checkPerimeter := func(t *testing.T, shape Shape, expected float64) {
-		t.Helper()
-		got := shape.Perimeter()
-		if got != expected {
-			t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
+	perimeterTests := []struct {
+		shape    Shape
+		expected float64
+	}{
+		{Rectangle{5.0, 5.0}, 20.0},
+		{Circle{5.0}, 2 * math.Pi * 5.0},
+	}
+	for _, tt := range perimeterTests {
+		got := tt.shape.Perimeter()
+		if got != tt.expected {
+			t.Errorf("expected '%.2f' but got '%.2f'", tt.expected, got)
 		}
 	}
-
-	t.Run("rectangles", func(t *testing.T) {
-		rectangle := Rectangle{5.0, 5.0}
-		expected := 20.0
-		checkPerimeter(t, rectangle, expected)
-	})
-
-	t.Run("circles", func(t *testing.T) {
-		circle := Circle{5.0}
-		expected := 2 * math.Pi * 5.0
-		checkPerimeter(t, circle, expected)
-	})
 }
 
 func TestArea(t *testing.T) {
-	checkArea := func(t *testing.T, shape Shape, expected float64) {
-		t.Helper()
-		got := shape.Area()
-		if got != expected {
-			t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
-		}
+	areaTests := []struct {
+		shape    Shape
+		expected float64
+	}{
+		{Rectangle{3.0, 5.0}, 15.0},
+		{Circle{5.0}, math.Pi * 25.0},
 	}
 
-	t.Run("rectangles", func(t *testing.T) {
-		rectangle := Rectangle{3.0, 5.0}
-		expected := 15.0
-		checkArea(t, rectangle, expected)
-	})
-
-	t.Run("circles", func(t *testing.T) {
-		circle := Circle{5.0}
-		expected := math.Pi * 25.0
-		checkArea(t, circle, expected)
-	})
+	for _, tt := range areaTests {
+		got := tt.shape.Area()
+		if got != tt.expected {
+			t.Errorf("expected '%.2f' but got '%.2f'", tt.expected, got)
+		}
+	}
 }
