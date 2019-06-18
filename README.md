@@ -9,21 +9,21 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Iteration
 - [x] Arrays and slices
 - [x] Structs, methods & Interfaces
-- [] Pointers & errors
-- [] Maps
-- [] Dependency Injection
-- [] Mocking
-- [] Concurrency
-- [] Select
-- [] Reflection
-- [] Sync
-- [] Context
+- [ ] Pointers & errors
+- [ ] Maps
+- [ ] Dependency Injection
+- [ ] Mocking
+- [ ] Concurrency
+- [ ] Select
+- [ ] Reflection
+- [ ] Sync
+- [ ] Context
 
 ## Build An Application
 
-- [] HTTP server
-- [] JSON, routing and embedding
-- [] IO and sorting
-- [] Command line & package structure
-- [] Time
-- [] WebSockets
+- [ ] HTTP server
+- [ ] JSON, routing and embedding
+- [ ] IO and sorting
+- [ ] Command line & package structure
+- [ ] Time
+- [ ] WebSockets
