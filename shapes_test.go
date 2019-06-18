@@ -9,6 +9,14 @@ type Shape interface {
 }
 
 func TestPerimeter(t *testing.T) {
+	checkPerimeter := func(t *testing.T, shape Shape, expected float64) {
+		t.Helper()
+		got := shape.Perimeter()
+		if got != expected {
+			t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
+		}
+	}
+
 	t.Run("rectangles", func(t *testing.T) {
 		rectangle := Rectangle{5.0, 5.0}
 		expected := 20.0
@@ -23,6 +31,14 @@ func TestPerimeter(t *testing.T) {
 }
 
 func TestArea(t *testing.T) {
+	checkArea := func(t *testing.T, shape Shape, expected float64) {
+		t.Helper()
+		got := shape.Area()
+		if got != expected {
+			t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
+		}
+	}
+
 	t.Run("rectangles", func(t *testing.T) {
 		rectangle := Rectangle{3.0, 5.0}
 		expected := 15.0
@@ -34,20 +50,4 @@ func TestArea(t *testing.T) {
 		expected := math.Pi * 25.0
 		checkArea(t, circle, expected)
 	})
-}
-
-func checkPerimeter(t *testing.T, shape Shape, expected float64) {
-	t.Helper()
-	got := shape.Perimeter()
-	if got != expected {
-		t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
-	}
-}
-
-func checkArea(t *testing.T, shape Shape, expected float64) {
-	t.Helper()
-	got := shape.Area()
-	if got != expected {
-		t.Errorf("expected '%.2f' but got '%.2f'", expected, got)
-	}
 }
