@@ -9,7 +9,7 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Iteration
 - [x] Arrays and slices
 - [x] Structs, methods & Interfaces
-- [ ] Pointers & errors
+- [x] Pointers & errors
 - [ ] Maps
 - [ ] Dependency Injection
 - [ ] Mocking
