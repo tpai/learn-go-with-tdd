@@ -12,7 +12,7 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Pointers & errors
 - [x] Maps
 - [x] Dependency Injection
-- [ ] Mocking
+- [x] Mocking
 - [ ] Concurrency
 - [ ] Select
 - [ ] Reflection
