@@ -13,7 +13,7 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Maps
 - [x] Dependency Injection
 - [x] Mocking
-- [ ] Concurrency
+- [x] Concurrency
 - [ ] Select
 - [ ] Reflection
 - [ ] Sync
