@@ -29,7 +29,7 @@ func (d *DefaultSleeper) Sleep() {
 	time.Sleep(1 * time.Second)
 }
 
-func main() {
+func StartCountDown() {
 	sleeper := &ConfigurableSleeper{1 * time.Second, time.Sleep}
 	CountDown(os.Stdout, sleeper)
 }

@@ -14,6 +14,6 @@ func GreetHandler(w http.ResponseWriter, r *http.Request) {
 	Greet(w, "Tony")
 }
 
-func main() {
+func StartHttpServer() {
 	http.ListenAndServe(":8000", http.HandlerFunc(GreetHandler))
 }
