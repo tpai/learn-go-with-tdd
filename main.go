@@ -1,7 +1,7 @@
 package main
 
 import (
-	cw "./checkWebsites"
+	cw "./concurrency"
 	"fmt"
 )
 
