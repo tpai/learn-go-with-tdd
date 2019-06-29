@@ -15,7 +15,7 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Mocking
 - [x] Concurrency
 - [x] Select
-- [ ] Reflection
+- [x] Reflection
 - [ ] Sync
 - [ ] Context
 
