@@ -21,7 +21,7 @@ https://quii.gitbook.io/learn-go-with-tests
 
 ## Build An Application
 
-- [ ] HTTP server
+- [x] HTTP server
 - [ ] JSON, routing and embedding
 - [ ] IO and sorting
 - [ ] Command line & package structure

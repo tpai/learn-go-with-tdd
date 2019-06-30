@@ -1,20 +1,42 @@
 package main
 
 import (
-	"io"
-	"net"
+	"fmt"
 	"net/http"
 )
 
-func Run() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		io.WriteString(w, "Hello world!\n")
-	})
+type PlayerStore interface {
+	GetPlayerScore(name string) int
+	RecordSave(name string)
+}
 
-	l, err := net.Listen("tcp", ":8001")
-	if err != nil {
-		panic(err)
+type PlayerServer struct {
+	store PlayerStore
+}
+
+func (p *PlayerServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	player := r.URL.Path[len("/players/"):]
+
+	switch r.Method {
+	case http.MethodGet:
+		p.showScore(w, player)
+	case http.MethodPost:
+		p.saveScore(w, player)
+	}
+}
+
+func (p *PlayerServer) showScore(w http.ResponseWriter, player string) {
+	result := p.store.GetPlayerScore(player)
+
+	if result == 0 {
+		w.WriteHeader(http.StatusNotFound)
 	}
 
-	http.Serve(l, nil)
+	fmt.Fprint(w, result)
+}
+
+func (p *PlayerServer) saveScore(w http.ResponseWriter, player string) {
+	p.store.RecordSave(player)
+
+	w.WriteHeader(http.StatusAccepted)
 }
