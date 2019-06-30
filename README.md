@@ -17,7 +17,7 @@ https://quii.gitbook.io/learn-go-with-tests
 - [x] Select
 - [x] Reflection
 - [x] Sync
-- [ ] Context
+- [x] Context
 
 ## Build An Application
 
